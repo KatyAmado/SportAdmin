@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportAdmin - Registro (Paso 3 y Credenciales)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <img src="logo SportAdmin.jpg" alt="Logo SportAdmin" class="logo">
+            <h2>Registro Final</h2>
+            <p>Acudiente, Contraseña y Términos</p>
+        </header>
+
+        <!-- Indicador visual del proceso (Paso 3 activo) -->
+        <div class="wizard-steps">
+            <div class="step-indicator">1</div>
+            <div class="step-indicator">2</div>
+            <div class="step-indicator active">3</div>
+        </div>
+
+        <!-- Formulario limpio -->
+        <form onsubmit="validarYCompletarRegistro(event)">
+            <div class="form-group">
+                <label>Nombre Completo del Acudiente (*)</label>
+                <input type="text" id="nombreAcudiente" class="input-box" placeholder="Ej. María Gómez" required>
+            </div>
+
+            <div class="form-group">
+                <label>Identificación del Acudiente (*)</label>
+                <input type="text" id="idAcudiente" class="input-box" placeholder="Ej. 52123456" required>
+            </div>
+
+            <div class="form-group">
+                <label>Parentesco (*)</label>
+                <input type="text" id="parentesco" class="input-box" placeholder="Ej. Madre, Padre, Tío(a)" required>
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono de Contacto (*)</label>
+                <input type="tel" id="telAcudiente" class="input-box" placeholder="Ej. 3209876543" required>
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña de Acceso (*)</label>
+                <input type="password" id="nuevaContrasena" class="input-box" placeholder="Ej. Clave*2026" required>
+                <small class="form-hint">Debe tener entre 6 y 15 caracteres, incluyendo letras, números y al menos un carácter especial (@, #, $, *).</small>
+            </div>
+
+            <div class="form-group">
+                <label>Confirmar Contraseña (*)</label>
+                <input type="password" id="confirmaContrasena" class="input-box" placeholder="Repite tu contraseña" required>
+            </div>
+
+            <div class="form-group terms-group">
+                <input type="checkbox" required>
+                <label>Autorizo el Tratamiento de Datos y acepto los Términos (*)</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Finalizar Registro</button>
+            <button type="button" class="btn-secondary" onclick="window.location.href='registro_paso_2.html'">Anterior</button>
+        </form>
+    </div>
+
+    <script>
+        function validarYCompletarRegistro(event) {
+            event.preventDefault();
+
+            let password = document.getElementById('nuevaContrasena').value;
+            let confirma = document.getElementById('confirmaContrasena').value;
+
+            if (password !== confirma) {
+                alert("Las contraseñas no coinciden. Por favor, revísalas e inténtalo de nuevo.");
+                return;
+            }
+
+            let regexPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{6,15}$/;
+
+            if (!regexPassword.test(password)) {
+                alert("La contraseña no cumple con los requisitos de seguridad.\n\nDebe tener:\n- Entre 6 y 15 caracteres\n- Al menos una letra\n- Al menos un número\n- Al menos un carácter especial (@, #, $, *, etc.)");
+                return;
+            }
+
+            alert("¡Registro exitoso! Todos los datos y credenciales han sido guardados correctamente. Recuerda que tu número de identificación ingresado en el Paso 1 será tu usuario para iniciar sesión.");
+            
+            window.location.href = "Login_Validación.html";
+        }
+    </script>
+
+</body>
+</html>

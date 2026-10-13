@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportAdmin - Registro (Paso 1)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <img src="logo SportAdmin.jpg" alt="Logo SportAdmin" class="logo">
+            <h2>Registro</h2>
+            <p>Datos del Deportista</p>
+        </header>
+
+        <!-- Indicador visual del proceso (Paso 1 activo) -->
+        <div class="wizard-steps">
+            <div class="step-indicator active">1</div>
+            <div class="step-indicator">2</div>
+            <div class="step-indicator">3</div>
+        </div>
+
+        <!-- El action indica a qué archivo pasa al cumplirse los campos obligatorios -->
+        <form action="Registro_paso_2.html" method="GET">
+            <div class="form-group">
+                <label>Nombre Completo (*)</label>
+                <input type="text" class="input-box" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label>Identificación (*)</label>
+                <input type="text" class="input-box" placeholder="Ej. 1023456789" required>
+            </div>
+
+            <div class="form-group">
+                <label>Correo Electrónico (*)</label>
+                <input type="email" class="input-box" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Dirección (*)</label>
+                <input type="text" class="input-box" placeholder="Ej. Calle 10 # 20-30" required>
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono (*)</label>
+                <input type="tel" class="input-box" placeholder="Ej. 3101234567" required>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha de Nacimiento (*)</label>
+                <input type="date" class="input-box" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Siguiente</button>
+        </form>
+        
+        <div class="form-footer-links">
+            <a href="Login_Validación.html">← Volver al Login</a>
+        </div>
+    </div>
+
+</body>
+</html>

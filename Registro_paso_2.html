@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportAdmin - Registro (Paso 2)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <img src="logo SportAdmin.jpg" alt="Logo SportAdmin" class="logo">
+            <h2>Registro</h2>
+            <p>Ficha Médica</p>
+        </header>
+
+        <!-- Indicador visual del proceso (Paso 2 activo) -->
+        <div class="wizard-steps">
+            <div class="step-indicator">1</div>
+            <div class="step-indicator active">2</div>
+            <div class="step-indicator">3</div>
+        </div>
+
+        <form action="Registro_paso_3.html" method="GET">
+            <div class="form-group">
+                <label>EPS (*)</label>
+                <input type="text" class="input-box" placeholder="Ej. Sura, Sanitas, Famisanar" required>
+            </div>
+
+            <div class="form-group">
+                <label>RH (*)</label>
+                <input type="text" class="input-box" placeholder="Ej. O+, A-, B+" required>
+            </div>
+
+            <div class="form-group">
+                <label>Alergias</label>
+                <!-- Los campos opcionales no llevan 'required' -->
+                <input type="text" class="input-box" placeholder="Ninguna o especifique">
+            </div>
+
+            <div class="form-group">
+                <label>Medicamentos Habituales</label>
+                <input type="text" class="input-box" placeholder="Ninguno o especifique">
+            </div>
+
+            <div class="form-group">
+                <label>Cuidados Especiales</label>
+                <input type="text" class="input-box" placeholder="Ninguno o especifique">
+            </div>
+
+            <button type="submit" class="btn-primary">Siguiente</button>
+            <button type="button" class="btn-secondary" onclick="window.location.href='registro_paso1'">Anterior</button>
+        </form>
+    </div>
+
+</body>
+</html>
